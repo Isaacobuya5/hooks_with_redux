@@ -1,6 +1,6 @@
-import React, {useContext, useMemo} from "react";
+import React, { useMemo } from "react";
 import ConnectedTodoItem from "../containers/ConnectedTodoItem";
-import { StateContext } from "../contexts/StateContexts";
+
 
 const TodoList = ({filter, todos}) => {
     const filteredTodos = useMemo(() => {
@@ -15,7 +15,7 @@ const TodoList = ({filter, todos}) => {
         }
       },[filter, todos]);
     
-    const items = useContext(StateContext);
-    return items.map((item, index) => <ConnectedTodoItem key={index} {...item} />);
+    // const items = useContext(StateContext);
+    return filteredTodos.map((item, index) => <ConnectedTodoItem key={index} {...item} />);
 } 
 export default TodoList;

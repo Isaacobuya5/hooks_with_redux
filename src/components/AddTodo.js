@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const AddTodo = ({addTodo}) => {
+const AddTodo = ({addNewTodo}) => {
     const [input, setInput] = useState('');
  
         // input field handler
@@ -13,7 +13,7 @@ const AddTodo = ({addTodo}) => {
     const handleAdd = (e) => {
             e.preventDefault();
             if (input) {
-                addTodo(input);
+                addNewTodo(input);
                 // clear the input field
                 setInput('');
             }
